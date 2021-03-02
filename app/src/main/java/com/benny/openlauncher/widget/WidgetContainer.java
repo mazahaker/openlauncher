@@ -14,6 +14,9 @@ import com.benny.openlauncher.activity.HomeActivity;
 import com.benny.openlauncher.model.Item;
 
 public class WidgetContainer extends FrameLayout {
+
+    private final static int SHOW_RESIZE_DELAY = 5000;
+
     View ve;
     View he;
     View vl;
@@ -49,7 +52,7 @@ public class WidgetContainer extends FrameLayout {
                 item.setSpanY(item.getSpanY() + 1);
                 scaleWidget(widgetContainer, item);
                 widgetContainer.removeCallbacks(action);
-                widgetContainer.postDelayed(action, 2000);
+                widgetContainer.postDelayed(action, SHOW_RESIZE_DELAY);
             }
         });
 
@@ -60,7 +63,7 @@ public class WidgetContainer extends FrameLayout {
                 item.setSpanX(item.getSpanX() + 1);
                 scaleWidget(widgetContainer, item);
                 widgetContainer.removeCallbacks(action);
-                widgetContainer.postDelayed(action, 2000);
+                widgetContainer.postDelayed(action, SHOW_RESIZE_DELAY);
             }
         });
 
@@ -71,7 +74,7 @@ public class WidgetContainer extends FrameLayout {
                 item.setSpanY(item.getSpanY() - 1);
                 scaleWidget(widgetContainer, item);
                 widgetContainer.removeCallbacks(action);
-                widgetContainer.postDelayed(action, 2000);
+                widgetContainer.postDelayed(action, SHOW_RESIZE_DELAY);
             }
         });
 
@@ -82,7 +85,7 @@ public class WidgetContainer extends FrameLayout {
                 item.setSpanX(item.getSpanX() - 1);
                 scaleWidget(widgetContainer, item);
                 widgetContainer.removeCallbacks(action);
-                widgetContainer.postDelayed(action, 2000);
+                widgetContainer.postDelayed(action, SHOW_RESIZE_DELAY);
             }
         });
     }
@@ -93,7 +96,7 @@ public class WidgetContainer extends FrameLayout {
         vl.animate().scaleY(1).scaleX(1);
         hl.animate().scaleY(1).scaleX(1);
 
-        postDelayed(action, 2000);
+        postDelayed(action, SHOW_RESIZE_DELAY);
     }
 
     public void scaleWidget(View view, Item item) {

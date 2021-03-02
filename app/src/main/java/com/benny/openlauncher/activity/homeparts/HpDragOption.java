@@ -148,8 +148,8 @@ public class HpDragOption {
 
             @Override
             public boolean onStart(Action action, PointF location, boolean isInside) {
-                if (!DragAction.Action.SEARCH.equals(action))
-                    _homeActivity.getItemOptionView().showItemPopup(_homeActivity);
+//                if (!DragAction.Action.SEARCH.equals(action))
+//                    _homeActivity.getItemOptionView().showItemPopup(_homeActivity);
                 return true;
             }
 
@@ -201,6 +201,8 @@ public class HpDragOption {
                         _homeActivity.getDock().revertLastItem();
                     }
                 }
+                if (!DragAction.Action.SEARCH.equals(action))
+                    _homeActivity.getItemOptionView().showItemPopup(_homeActivity);
             }
 
             @Override
